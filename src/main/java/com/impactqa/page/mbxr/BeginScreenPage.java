@@ -30,4 +30,5 @@ public class BeginScreenPage extends BasePage {
         appiumUtils.isElementDisplayed("begin", 30);
         appiumUtils.click("begin");
     }
+
 }

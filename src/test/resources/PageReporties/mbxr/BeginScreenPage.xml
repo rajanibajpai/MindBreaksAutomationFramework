@@ -4,6 +4,11 @@
 		<ios locatorType="xpath" locatorValue="//*[@name='Begin']" />
 	</object>
 
+	<object name="begin" >
+		<android locatorType="name" locatorValue="" />
+		<ios locatorType="name" locatorValue="Begin" />
+	</object>
+
 	<object name="welcomeScreen" >
 		<android locatorType="xpath" locatorValue="" />
 		<ios locatorType="xpath" locatorValue="//XCUIElementTypeStaticText[@name='Take a break and experience the restorative power of nature']"/>

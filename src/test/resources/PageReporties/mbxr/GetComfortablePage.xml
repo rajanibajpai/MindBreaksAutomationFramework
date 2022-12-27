@@ -1,0 +1,11 @@
+<objects>
+
+	<object name="getComfortableScreen" >
+		<android locatorType="xpath" locatorValue="" />
+		<ios locatorType="xpath" locatorValue="//XCUIElementTypeStaticText[@name='Adjust the Zero Gravity chair to any position where you feel comfortable. Use the dial inside the left armrest to adjust the back and lower leg support.']"/>
+	</object>
+	<object name="next" >
+		<android locatorType="name" locatorValue="" />
+		<ios locatorType="name" locatorValue="Next" />
+	</object>
+</objects>
