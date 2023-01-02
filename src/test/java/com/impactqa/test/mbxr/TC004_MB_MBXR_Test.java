@@ -5,6 +5,7 @@ import com.impactqa.base.BaseTestMobile;
 import com.impactqa.listeners.TestAllureListener;
 import com.impactqa.page.mbxr.BeginScreenPage;
 import com.impactqa.page.mbxr.GetComfortablePage;
+import com.impactqa.page.mbxr.VisualInstructionsPage;
 import com.impactqa.utilities.ExcelUtil;
 import com.impactqa.utilities.FrameworkConfig;
 import io.qameta.allure.*;
@@ -17,7 +18,7 @@ import org.testng.annotations.Test;
 @Epic("Test Android or iOS")
 @Feature("Test Android Execution")
 @Listeners({TestAllureListener.class})
-public class TC003_MB_MBXR_Test extends BaseTestMobile {
+public class TC004_MB_MBXR_Test extends BaseTestMobile {
 
     @BeforeClass
     @Parameters({"dataID"})
@@ -52,24 +53,47 @@ public class TC003_MB_MBXR_Test extends BaseTestMobile {
         beginScreenPage.tapOnBegin();
 
     }
-   @Test(priority = 3, description = "Comfortable Instructions", dependsOnMethods = "verifyBeginButton")
-    @Story("Get Comfortable Instructions")
-    @Description("Verify Comfort Instructions")
-    public void verifyComfortInstructions() {
-       GetComfortablePage getComfortablePage = new GetComfortablePage(driver, platform);
-        if(getComfortablePage.getComfortableMsgDisplayed()){
-            Allure.step("Pass");
-        }else{
-            Allure.step("Fail");
-        }
-    }
 
-    @Test(priority = 4, description = "Click on Next Button", dependsOnMethods = "verifyComfortInstructions")
+    @Test(priority = 3, description = "Click on Next Button")
     @Story("Click Next Button")
     @Description("Verify Next Button")
     public void verifyComfortNextButton() {
         GetComfortablePage getComfortablePage = new GetComfortablePage(driver, platform);
         getComfortablePage.tapOnNext();
+
+    }
+
+   @Test(priority = 4, description = "Visual instructions", dependsOnMethods = "verifyComfortNextButton")
+   @Story("Get Visual instructions")
+   @Description("Verify Visual instructions")
+   public void visualInstructions() {
+       VisualInstructionsPage visualInst = new VisualInstructionsPage(driver, platform);
+       if(visualInst.visualInstDisplayed()){
+           Allure.step("Pass");
+       }else{
+           Allure.step("Fail");
+       }
+   }
+
+    @Test(priority = 5, description = "Visual toggle label", dependsOnMethods = "verifyComfortNextButton")
+    @Story("Get visual toggle label")
+    @Description("Verify visual toggle label")
+    public void visualToggleLabel() {
+        VisualInstructionsPage visualInst = new VisualInstructionsPage(driver, platform);
+        if(visualInst.visualToggleLabel()){
+            Allure.step("Pass");
+            //Write code to click on toggle button here
+        }else{
+            Allure.step("Fail");
+        }
+    }
+
+    @Test(priority = 6, description = "Click on Next Button", dependsOnMethods = "visualToggleLabel")
+    @Story("Click Next Button")
+    @Description("Verify Next Button on Visual instructions page")
+    public void verifyVisualNextButton() {
+        VisualInstructionsPage visualInstructions = new VisualInstructionsPage(driver, platform);
+        visualInstructions.tapOnNext();
 
     }
 }

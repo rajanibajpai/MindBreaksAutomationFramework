@@ -1,0 +1,15 @@
+<objects>
+
+	<object name="visualInstructions" >
+		<android locatorType="xpath" locatorValue="" />
+		<ios locatorType="xpath" locatorValue="//XCUIElementTypeStaticText[@name='MindBreaks allows you to relax with both visual and auditory biophilia. If you’d prefer to enjoy your break with audio only, you can disable visuals here']"/>
+	</object>
+	<object name="visualToggleLabel" >
+		<android locatorType="xpath" locatorValue="" />
+		<ios locatorType="xpath" locatorValue="//XCUIElementTypeStaticText[@name='On screen visuals']"/>
+	</object>
+	<object name="next" >
+		<android locatorType="name" locatorValue="" />
+		<ios locatorType="name" locatorValue="Next" />
+	</object>
+</objects>

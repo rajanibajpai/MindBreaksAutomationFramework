@@ -26,16 +26,22 @@
         </classes>
     </test>-->
 
-    <test name="TC002_MB_MBXR_Test" >
+   <!-- <test name="TC002_MB_MBXR_Test" >
         <parameter name="dataID" value="TC001_iOS"/>
         <classes>
             <class name="com.impactqa.test.mbxr.TC002_MB_MBXR_Test"/>
         </classes>
-    </test>
-    <test name="TC003_MB_MBXR_Test" >
+    </test>-->
+   <!-- <test name="TC003_MB_MBXR_Test" >
         <parameter name="dataID" value="TC001_iOS"/>
         <classes>
             <class name="com.impactqa.test.mbxr.TC003_MB_MBXR_Test"/>
+        </classes>
+    </test>-->
+    <test name="TC004_MB_MBXR_Test" >
+        <parameter name="dataID" value="TC001_iOS"/>
+        <classes>
+            <class name="com.impactqa.test.mbxr.TC004_MB_MBXR_Test"/>
         </classes>
     </test>
 <!--
